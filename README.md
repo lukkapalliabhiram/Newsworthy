@@ -1,3 +1,4 @@
+This project, originally developed in a university enterprise account, has been migrated to my personal GitHub repository as part of my portfolio.
 # Newsworthy - A Modern News Aggregator App
 
 **Summary:**  

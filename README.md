@@ -1,66 +1,43 @@
-# News-App
+# Newsworthy - A Modern News Aggregator App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3. ab#22
-## Estimated Efforts to complete this project is 20-25 hours
+**Summary:**  
+Newsworthy is a dynamic news aggregation application that delivers up-to-date news from various categories to users. Developed with a focus on modern web technologies, the app utilizes Angular for its responsive frontend and ASP.NET Core for a robust backend, supported by a SQL Server database. Featuring JWT-based authentication, Newsworthy offers a secure and personalized news browsing experience. This project, initially created for academic purposes, has been migrated to a personal GitHub repository to showcase my development skills and versatility in handling both client and server-side technologies.
 
-The below are mandatory
+## Project Overview
 
-Angular 5/6/7 as front end
+**Frontend:** Angular 5/6/7  
+**Backend:** ASP.NET Core with SQL Server  
+**Authentication:** JWT for secure access
 
-ASP.NET Core as backend with SQL server
- 
-Authentication to be done by JWT
+## Development Environment
 
-## Development server
+**Serve Locally:** Run `ng serve` and navigate to `http://localhost:4200/`. Live reloading is enabled for active development.  
+**Code Generation:** Use `ng generate component component-name` for scaffolding new components and other Angular constructs like directives, pipes, services, classes, and modules.  
+**Build Production:** Execute `ng build` to compile the project. The output is stored in the `wwwroot/` directory, ready for deployment.  
+**Linting:** Ensure code quality by running `npm run lint`, leveraging ESLint.  
+**Unit Testing:** Run `npm run test` to execute tests with Mocha and Karma.  
+**End-to-End Testing:** With `ng e2e`, Protractor runs through end-to-end tests, ensuring the app functions as expected. Make sure the app is being served via `ng serve`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Help
 
-## Code scaffolding
+For additional support with Angular CLI, run `ng help` or refer to the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+## Using NEWS API as a Data Source
 
-## Build
+**Trending News:** `https://newsapi.org/v2/top-headlines?country=in&apikey=YOUR_API_KEY&page=1`  
+**Category-wise News:** `https://newsapi.org/v2/top-headlines?category=CATEGORY&apikey=YOUR_API_KEY&page=1`  
+**Search News:** `https://newsapi.org/v2/everything?q=SEARCH_TEXT&apiKey=YOUR_API_KEY&language=en&page=1`  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `wwwroot/` directory.
+> **Note:** Replace `YOUR_API_KEY` with your generated API key from [NEWSAPI](https://newsapi.org/register).
 
-## Running lint
+## API Key Registration
 
-Run `npm run lint` to check linting errors.(https://eslint.org/).
+To utilize the NEWS API, register at [NEWSAPI](https://newsapi.org/register) to receive your API key.
 
-## Running unit tests
+## Estimated Development Time
 
-Run `npm run test` to execute both Mocha and angular test cases [Mocha] & [Karma] (https://mochajs.org/) & (https://karma-runner.github.io) 
+The estimated effort to complete this project is 20-25 hours, making it an ideal portfolio piece that demonstrates the ability to create full-stack web applications.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## Command used to generate this project
-Front-end Project is originally generated using Angular CLI, and backend is built in ASP.Net Core using dotnet core CLI.
-
-
-
-## The NEWS API to be used as data source
-- To get category wise news use the following end point. [Category News endpoint]
-(https://newsapi.org/v2/top-headlines?category=<<news_category>>&apikey=<<api_key>>&page=1)
-
-- To get trending news use the following endpoint. [Top Headlines endpoint]
-(https://newsapi.org/v2/top-headlines?country=in&apikey=<<api_key>>&page=1)
-
-- To search for any news based on serach text . [News search endpoint]
-(https://newsapi.org/v2/everything?q=<<search_text>>&apiKey=<<api_key>>&language=en&page=1)
-
-P.S :- You need to generate the API_KEY for the above endpoints and replace 
-`<<api_key>>` with it.
-
-
-## To register for an API key, follow these steps:
-
-You need to signup to [NEWSAPI] (https://newsapi.org/register).
-
-- After registration, API key is generated for you.
+This project represents a significant effort in web development, showcasing skills in both frontend and backend technologies. By transitioning this project from my university enterprise account to my personal account, I aim to highlight my individual contributions and growth as a developer.

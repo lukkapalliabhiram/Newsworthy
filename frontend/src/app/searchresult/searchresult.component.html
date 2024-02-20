@@ -1,0 +1,14 @@
+<p>
+  Search result for {{searchQuery}}
+</p>
+<!-- <mat-grid-list cols="2">
+  <mat-grid-tile *ngFor="let n of News">
+    <app-news [News]=n></app-news>
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="15px" fxLayoutAlign="center">
+    <div *ngFor="let n of News" fxFlex="0 1 calc(35% - 15px)"  >
+        <app-news [News]=n [hideFavouriteButton]=true  (favouriteDeleted)="refreshFavourites($event);"></app-news>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+ 
+
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="15px" fxLayoutAlign="center">
+    <div *ngFor="let n of News" fxFlex="0 1 calc(35% - 15px)"  >
+        <app-news [News]=n></app-news>
+    </div>
+</div>
+<!-- fxFlex="0 1 calc(33.3% - 15px)" fxFlex.lt-md="0 1 calc(50% - 15px)" fxFlex.lt-sm="100%" -->
+<!-- <div class="container" style="display:flex; flex-direction: row; flex-wrap:wrap; align-items:center;">
+        <div *ngFor="let n of News" style="flex-shrink: 0; flex-basis:45%;">
+                <app-news [News]=n></app-news>
+            </div>
+</div> -->

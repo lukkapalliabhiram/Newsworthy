@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+h1.brand{
+    font-family:'Pacifico';
+}
+
+.header-control{
+    width:20%
+}

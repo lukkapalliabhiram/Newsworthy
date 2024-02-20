@@ -1,0 +1,14 @@
+.example-card {
+  margin-bottom: 32px;
+  margin:10px;
+  }
+  
+  .example-header-image {
+    /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover; */
+  }
+  .form-button{
+    padding:1em;
+    border-radius: .5em;
+    text-transform: capitalize;
+}

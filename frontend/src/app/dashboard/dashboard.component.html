@@ -1,0 +1,97 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class="side-nav-list">
+            <mat-nav-list>
+                    <span mat-list-item>Hi! {{userName}}</span>
+                    <form mat-list-item>
+                        <mat-form-field class="header-control">
+                            <input matInput [formControl]="searchQuery" class="searchinput" placeholder="Search" />
+                        </mat-form-field><button name="searchbutton" (click)="search();sidenav.toggle()">
+                            <mat-icon>search</mat-icon>
+                        </button>
+                    </form>
+                    <a mat-list-item [routerLink]="['view/trending']" (click)="sidenav.toggle()">
+                        Trending
+                    </a>
+                    <a mat-list-item [routerLink]="['view/favourites']" (click)="sidenav.toggle()">
+                        Favourites
+                    </a>
+            
+                    <a mat-list-item [matMenuTriggerFor]="menu"
+                        class="mat-button mat-button-base mat-primary categories-parent">
+                        Categories
+                    </a>
+                    <mat-menu #menu="matMenu" class="categories-menu">
+                        <button mat-menu-item (click)="getByCategory(categories.indexOf(category))"
+                            *ngFor="let category of categories">{{category}}</button>
+                    </mat-menu>
+            
+            
+                    <a mat-list-item routerLink="#" (click)="logOff();sidenav.toggle()">
+                        Log Off
+                    </a>
+                </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <div fxHide.gt-xs>
+                <button mat-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div fxFlex fxLayout fxHide.xs>
+                <form>
+                    <mat-form-field class="header-control">
+                <input matInput [formControl]="searchQuery" class="searchinput" placeholder="Search" />
+                </mat-form-field>
+                <button mat-stroked-button color="primary" name="searchbutton"
+                    class="mat-raised-button mat-button-base mat-primary searchbutton" (click)=search()>
+                    <span class="mat-button-wrapper">Search</span>
+                    <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                    <div class="mat-button-focus-overlay"></div>
+                </button>
+                </form>
+            </div>
+            <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+                <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+                    <li>
+                        <a [routerLink]="['view/trending']" mat-button
+                            class="mat-button mat-button-base mat-primary trending">
+                            <span class="mat-button-wrapper">Trending</span>
+                            <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                            <div class="mat-button-focus-overlay"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['view/favourites']"
+                            class="mat-button mat-button-base mat-primary header-link favourites">
+                            <span class="mat-button-wrapper">Favourites</span>
+                            <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                            <div class="mat-button-focus-overlay"></div>
+                        </a>
+                    </li>
+                    <li> <a mat-button [matMenuTriggerFor]="menu"
+                            class="mat-button mat-button-base mat-primary categories-parent">
+                            Categories
+                        </a>
+                        <mat-menu #menu="matMenu" class="categories-menu">
+                            <button mat-menu-item (click)="getByCategory(categories.indexOf(category))"
+                                *ngFor="let category of categories">{{category}}</button>
+                        </mat-menu>
+                    </li>
+                    <li> <button mat-stroked-button (click)="logOff()" color="primary"
+                            class="mat-button mat-button-base mat-primary logoff">
+
+                            <span class="mat-button-wrapper">Log Off</span>
+                            <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                            <div class="mat-button-focus-overlay"></div>
+
+                        </button></li>
+                    <li> <span>Hi! {{userName}}</span></li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

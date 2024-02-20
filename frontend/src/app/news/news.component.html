@@ -1,0 +1,27 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><b>{{News.title}}</b></mat-card-title>
+    <mat-card-subtitle><b>{{News.publishedAt}}</b></mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{News.urlToImage}}" alt="Photo">
+  <mat-card-content>
+    <p>
+      {{News.description}}
+    </p>
+    <a href="{{News.url}}">Read full article</a>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button *ngIf="!News.isFavourite" (click)="addToFavourite(News)"
+      class="mat-raised-button mat-button-base mat-primary form-button">
+      <span class="mat-button-wrapper">Add to Favourites</span>
+      <div class="mat-button-ripple mat-ripple" matripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
+    </button>
+    <button mat-button *ngIf="News.isFavourite" (click)="removeFavourite(News.id)"
+     class="mat-raised-button mat-button-base mat-primary form-button">
+      <span class="mat-button-wrapper">Remove from Favourites</span>
+      <div class="mat-button-ripple mat-ripple" matripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
+    </button>
+  </mat-card-actions>
+</mat-card>

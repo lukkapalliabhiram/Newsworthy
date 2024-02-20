@@ -1,0 +1,96 @@
+version: '3.5'
+
+services:
+
+    frontend:
+
+        build: ./frontend
+
+        image: frontend
+
+       
+
+        ports:
+
+            - "4200:4200"
+
+        depends_on:
+
+            - authapp
+
+            - newsapp
+
+            - sqldb
+
+    authapp:
+
+        build: ./server/Auth
+
+        image: authapp
+
+        environment:
+        
+           ASPNETCORE_ENVIRONMENT: "Production" 
+           
+           AuthDbConstENV: "Server=sqldb;Database=NewsDB;User ID=sa;password=pass@123;MultipleActiveResultSets=true;"
+
+       
+
+        ports:
+
+            - "8089:80"
+
+        depends_on:
+
+            - sqldb
+
+       
+
+    newsapp:
+
+        build: ./server/server
+
+        image: newsapp
+
+        environment:
+
+           ASPNETCORE_ENVIRONMENT: "Production"
+
+           FavDbConstENV: "Server=sqldb;Database=FavouritesDB;User ID=sa;password=pass@123;MultipleActiveResultSets=true;"
+
+       
+
+        ports:
+
+            - "8081:80"
+
+        depends_on:
+            
+            ##- authapp
+            - sqldb
+
+      
+
+        
+
+    sqldb:
+
+        image: microsoft/mssql-server-windows-express
+
+        ports:
+
+            - "1433:1433"
+
+        environment:
+
+            - ACCEPT_EULA=Y
+
+            - SA_PASSWORD=pass@123
+
+networks:
+
+  default:
+
+    external:
+
+      name: nat

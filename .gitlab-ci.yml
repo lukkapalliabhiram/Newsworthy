@@ -1,0 +1,23 @@
+image : microsoft/dotnet:latest
+stages:
+  - compile
+  - test
+  - build
+compile:
+   stage: compile
+   script:    
+    - 'dotnet restore'
+    - 'dotnet build'
+test:
+   stage: test
+   script:    
+    - 'dotnet test server/test/AuthenticationTest.csproj'   
+    - 'dotnet test server/ServerTest/ServerTest.csproj' 
+build:
+   stage: build
+   script:    
+    - 'dotnet publish server/server -c Release'
+   artifacts:
+    expire_in: 1 month
+    paths:
+     - server/server/bin/Release/netcoreapp2.1/publish

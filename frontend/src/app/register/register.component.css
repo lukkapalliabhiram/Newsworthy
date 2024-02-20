@@ -1,0 +1,53 @@
+ 
+
+.login-form,.error-message{
+    display: flex;
+    flex-direction: column; 
+    font-family:Roboto,"Helvetica Neue",sans-serif;
+}
+.username,.password{
+    /* width:100%;
+    border:1px solid black; */
+}
+
+.error-message{
+    color:red;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-button{
+    padding:1em;
+    border-radius: .5em;
+    text-transform: capitalize;
+}
+
+.login-link, .form-header, .error-message{
+    text-align:center;
+}
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .login-form {
+        margin-left: 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .login-form {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .login-form {
+        margin: 0 auto !important;
+        align-content: center;
+        width: 50%;
+    }
+
+        .login-form .field {
+            width: 55% !important;
+        }
+}

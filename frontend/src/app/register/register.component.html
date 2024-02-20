@@ -1,0 +1,31 @@
+<div class="form-container">
+<h2 class="form-header">Register</h2>
+<form class="login-form" (submit)="register()">
+    <mat-form-field class="full-width">
+        <input name='username' matInput placeholder="UserName" [formControl]="username" autocomplete="off" required
+            class="username" />
+    </mat-form-field><br />
+    <mat-form-field class="full-width">
+        <input name="password" type="password" matInput [formControl]="password" placeholder="Password" class="password"
+            required />
+    </mat-form-field>
+    <mat-action-row>
+        <button class="mat-raised-button mat-button-base mat-primary form-button" color="primary" type="submit"
+            matButton>
+            <span class="mat-button-wrapper">Submit</span>
+            <div class="mat-button-ripple mat-ripple" matripple=""></div>
+            <div class="mat-button-focus-overlay"></div>
+        </button>
+    </mat-action-row>
+</form>
+<div class="login-link"><a [routerLink]="['/login']">Already a User? Login</a></div>
+
+<strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+<div class="error-message">
+    <div class="usernameerror" *ngIf="(username && (username.length && !username.valid ))">
+        UserName is required
+    </div>
+    <div class="passworderror" *ngIf="(password && (password.length && !password.valid ) )">
+        Password is required
+    </div>
+</div></div>

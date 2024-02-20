@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import './app-theme';*/
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+/* for sidenav to take a whole page */
+html, body { 
+    margin: 0;
+    height: 100%;
+    font-family: Arial;
+}

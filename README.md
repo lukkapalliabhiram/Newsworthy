@@ -35,9 +35,6 @@ For additional support with Angular CLI, run `ng help` or refer to the [Angular 
 
 To utilize the NEWS API, register at [NEWSAPI](https://newsapi.org/register) to receive your API key.
 
-## Estimated Development Time
-
-The estimated effort to complete this project is 20-25 hours, making it an ideal portfolio piece that demonstrates the ability to create full-stack web applications.
 
 ---
 
